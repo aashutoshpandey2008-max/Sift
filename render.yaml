@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sift-live-query-filter
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run check && npm test
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.19.0

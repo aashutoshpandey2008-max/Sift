@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find your next learning resource. Search and filter 250 resources across development, design, analytics, and security.">
+  <title>Sift — Find your next idea</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#results">Skip to results</a>
+<header class="topbar"><div class="top-inner">
+  <a href="/" class="brand" aria-label="Sift home"><img src="/favicon.svg" alt="" width="34" height="34">sift<span class="brand-dot">.</span></a>
+  <nav aria-label="Main"><a href="#explore" class="nav-active">Explore resources</a><button id="about-button" class="nav-button">About the catalog <span aria-hidden="true">↗</span></button></nav>
+  <span class="edition">THE LEARNING EDIT</span>
+</div></header>
+<main id="explore" class="shell">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy"><p class="eyebrow"><span class="small-line"></span> LESS SEARCHING. MORE DISCOVERING.</p>
+      <h1 id="hero-title">A little curiosity.<br><span>A world to explore.</span></h1>
+      <p class="hero-description">Find your next learning resource. Make room for<br class="desktop-break"> new skills, fresh perspectives, and better ideas.</p>
+      <div class="hero-stats"><span><strong id="catalog-total">250</strong> resources</span><i></i><span><strong>4</strong> categories</span><i></i><span>Endless possibilities</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orb"></div><div class="float-label code-label">&lt;/&gt; <span>Build something.</span></div><div class="float-label design-label">✳ <span>Think differently.</span></div><div class="spark spark-one">✦</div><div class="spark spark-two">✦</div><div class="art-caption">FOLLOW YOUR CURIOSITY ↗</div></div>
+  </section>
+  <section class="explore-section" aria-labelledby="explore-title">
+    <div class="section-heading"><div><p class="eyebrow purple">YOUR NEXT CHAPTER</p><h2 id="explore-title">The resource collection<span>.</span></h2></div><span class="collection-note">A small step toward something new.</span></div>
+    <form id="search-form" class="search-form" role="search"><span class="search-icon" aria-hidden="true"></span><label class="sr-only" for="search">Search resources</label><input id="search" type="search" maxlength="200" placeholder="Search resources, categories, or levels…" autocomplete="off"><kbd aria-hidden="true">/</kbd><button class="primary" type="submit">Search <span aria-hidden="true">↗</span></button></form>
+    <div class="workspace">
+      <aside class="sidebar" aria-label="Resource filters"><div class="filter-title"><h3>Filters</h3><button class="text-button" id="reset">Reset all</button></div><p class="filter-help">Find your kind of learning.</p>
+        <fieldset><legend>Category</legend><div id="category-filters"></div></fieldset>
+        <fieldset><legend>Experience level</legend><div id="level-filters"></div></fieldset>
+        <div class="filter-section"><label for="rating">Minimum rating</label><select id="rating"><option value="0">All ratings</option><option value="4">4.0 stars & up</option><option value="4.5">4.5 stars & up</option><option value="5">5.0 stars</option></select></div>
+        <div class="filter-section"><label for="duration">Time to explore</label><select id="duration"><option value="240">Any duration</option><option value="60">Up to 1 hour</option><option value="120">Up to 2 hours</option><option value="180">Up to 3 hours</option></select></div>
+        <div class="sidebar-note"><span aria-hidden="true">✳</span><strong>Stay curious.</strong><p>The next thing you learn could change how you see everything.</p></div>
+      </aside>
+      <section class="results-column" id="results" tabindex="-1" aria-label="Search results">
+        <div class="results-toolbar"><p id="result-count" role="status" aria-live="polite">Loading the collection…</p><div class="sort-tools"><label for="sort">Sort by</label><select id="sort"><option value="id">Catalog order</option><option value="rating-desc">Highest rated</option><option value="duration-asc">Shortest first</option><option value="duration-desc">Longest first</option><option value="title-asc">Title A–Z</option></select><div class="view-toggle" role="group" aria-label="Result layout"><button id="grid-view" class="selected" aria-label="Grid view" aria-pressed="true">▦</button><button id="list-view" aria-label="List view" aria-pressed="false">☰</button></div></div></div>
+        <div id="active-filters" class="active-filters" aria-label="Applied filters"></div>
+        <div id="result-grid" class="result-grid" aria-busy="true"></div>
+        <div class="pagination-bar" id="pagination-bar" hidden><label class="page-size">Show <select id="limit"><option value="6">6</option><option value="12" selected>12</option><option value="24">24</option></select> per page</label><nav id="pagination" aria-label="Result pages"></nav></div>
+      </section>
+    </div>
+  </section>
+</main>
+<footer class="shell footer"><span class="footer-brand">sift.</span><span>A little discovery goes a long way.</span><span>Live Query Filter System · 250-record demo</span></footer>
+<dialog id="details" aria-labelledby="dialog-title"><button class="dialog-close" id="close-dialog" aria-label="Close details">×</button><div id="dialog-content"></div></dialog>
+<noscript><p class="no-script">Please enable JavaScript to search and filter the catalog.</p></noscript>
+</body>
+</html>
